@@ -107,30 +107,66 @@
         </div>
     </section>
 
-    <!-- 支持游戏 -->
+    <!-- 游戏图片轮播 -->
     <section id="games" class="games">
         <div class="container">
-            <h2 class="section-title">热门游戏推荐</h2>
-            <div class="games-grid">
-                <div class="game-card">
-                    <div class="game-icon">🎮</div>
-                    <h3>动作冒险</h3>
-                    <p>刺激的冒险体验</p>
+            <h2 class="section-title">热门游戏展示</h2>
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-slides" id="carousel-slides">
+                        <div class="carousel-slide active">
+                            <img src="images/film.png" alt="电影游戏" class="carousel-image">
+                            <div class="carousel-caption">
+                                <h3>电影级游戏体验</h3>
+                                <p>沉浸式剧情，电影级画质</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/highscore.png" alt="高分游戏" class="carousel-image">
+                            <div class="carousel-caption">
+                                <h3>高评分游戏精选</h3>
+                                <p>玩家好评，品质保证</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/hot.png" alt="热门游戏" class="carousel-image">
+                            <div class="carousel-caption">
+                                <h3>当前最热门游戏</h3>
+                                <p>火爆全网，人气之选</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/new.png" alt="新游戏" class="carousel-image">
+                            <div class="carousel-caption">
+                                <h3>最新上架游戏</h3>
+                                <p>抢先体验，第一时间下载</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/recommad.png" alt="推荐游戏" class="carousel-image">
+                            <div class="carousel-caption">
+                                <h3>编辑精选推荐</h3>
+                                <p>专业推荐，不容错过</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="game-card">
-                    <div class="game-icon">🧩</div>
-                    <h3>益智解谜</h3>
-                    <p>挑战你的智慧</p>
-                </div>
-                <div class="game-card">
-                    <div class="game-icon">🏎️</div>
-                    <h3>竞速游戏</h3>
-                    <p>感受速度与激情</p>
-                </div>
-                <div class="game-card">
-                    <div class="game-icon">🎯</div>
-                    <h3>策略游戏</h3>
-                    <p>运筹帷幄的乐趣</p>
+                
+                <!-- 轮播控制按钮 -->
+                <button class="carousel-btn prev-btn" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn next-btn" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <!-- 轮播指示器 -->
+                <div class="carousel-indicators">
+                    <span class="indicator active" data-slide="0"></span>
+                    <span class="indicator" data-slide="1"></span>
+                    <span class="indicator" data-slide="2"></span>
+                    <span class="indicator" data-slide="3"></span>
+                    <span class="indicator" data-slide="4"></span>
                 </div>
             </div>
         </div>

@@ -205,19 +205,135 @@ function removeNotification(notification) {
     }, 300);
 }
 
-// 游戏卡片点击事件
+// 图片轮播功能
 document.addEventListener('DOMContentLoaded', function() {
-    const gameCards = document.querySelectorAll('.game-card');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const indicators = document.querySelectorAll('.indicator');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const slidesContainer = document.getElementById('carousel-slides');
     
-    gameCards.forEach(card => {
-        card.addEventListener('click', function() {
-            const gameType = this.querySelector('h3').textContent;
-            showNotification(`即将为您展示 ${gameType} 类游戏列表`, 'info');
-            
-            // 这里可以添加跳转到具体游戏分类页面的逻辑
-            console.log(`用户点击了 ${gameType} 游戏分类`);
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    let autoPlayInterval;
+    
+    // 更新轮播显示
+    function updateCarousel() {
+        // 移动滑块容器
+        slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+        
+        // 更新指示器
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentSlide);
+        });
+        
+        // 更新幻灯片active状态
+        slides.forEach((slide, index) => {
+            slide.classList.toggle('active', index === currentSlide);
+        });
+    }
+    
+    // 下一张
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+    }
+    
+    // 上一张
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+    }
+    
+    // 跳转到指定幻灯片
+    function goToSlide(index) {
+        currentSlide = index;
+        updateCarousel();
+    }
+    
+    // 自动播放
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(nextSlide, 4000); // 每4秒切换
+    }
+    
+    function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+    }
+    
+    // 事件监听器
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            stopAutoPlay();
+            startAutoPlay(); // 重新开始自动播放
+        });
+    }
+    
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            stopAutoPlay();
+            startAutoPlay(); // 重新开始自动播放
+        });
+    }
+    
+    // 指示器点击事件
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            goToSlide(index);
+            stopAutoPlay();
+            startAutoPlay(); // 重新开始自动播放
         });
     });
+    
+    // 鼠标悬停时暂停自动播放
+    const carouselContainer = document.querySelector('.carousel-container');
+    if (carouselContainer) {
+        carouselContainer.addEventListener('mouseenter', stopAutoPlay);
+        carouselContainer.addEventListener('mouseleave', startAutoPlay);
+    }
+    
+    // 键盘控制
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            prevSlide();
+            stopAutoPlay();
+            startAutoPlay();
+        } else if (e.key === 'ArrowRight') {
+            nextSlide();
+            stopAutoPlay();
+            startAutoPlay();
+        }
+    });
+    
+    // 触摸支持（移动端）
+    let startX = 0;
+    let endX = 0;
+    
+    if (carouselContainer) {
+        carouselContainer.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+        
+        carouselContainer.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            const diff = startX - endX;
+            
+            if (Math.abs(diff) > 50) { // 最小滑动距离
+                if (diff > 0) {
+                    nextSlide(); // 向左滑，显示下一张
+                } else {
+                    prevSlide(); // 向右滑，显示上一张
+                }
+                stopAutoPlay();
+                startAutoPlay();
+            }
+        });
+    }
+    
+    // 初始化
+    updateCarousel();
+    startAutoPlay();
 });
 
 // 按钮点击事件
