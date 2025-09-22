@@ -211,8 +211,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (primaryBtn) {
         primaryBtn.addEventListener('click', function() {
-            showNotification('欢迎使用GameFlip！正在为您准备下载页面...', 'success');
-            // 这里可以添加跳转到下载页面的逻辑
+            showNotification('正在为您打开下载页面...', 'success');
+            // 打开夸克网盘链接
+            window.open('https://pan.quark.cn/s/aea2c4b709e5?pwd=EJbp', '_blank');
         });
     }
     
