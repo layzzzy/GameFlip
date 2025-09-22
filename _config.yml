@@ -1,0 +1,50 @@
+# GitHub Pages 配置文件
+
+# 站点设置
+title: "GameFlip - 单机游戏下载器"
+description: "专业的单机游戏下载平台，海量游戏资源，免费下载"
+baseurl: ""
+url: "https://yourusername.github.io"
+
+# 构建设置
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# 插件
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# 排除文件
+exclude:
+  - README.md
+  - LICENSE
+  - .gitignore
+  - .github/
+
+# 包含文件
+include:
+  - _pages
+
+# 默认值
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+# SEO 设置
+lang: zh-CN
+author: GameFlip Team
+
+# 社交媒体
+social:
+  name: GameFlip
+  links:
+    - https://github.com/yourusername/GameFlip_Website
+
+# 站点验证
+google_site_verification: ""
+bing_site_verification: ""

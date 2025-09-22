@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameFlip - 单机游戏下载器</title>
+    <meta name="description" content="GameFlip - 专业的单机游戏下载平台，海量游戏资源，免费下载">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-gamepad"></i>
+                <span>GameFlip</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#features" class="nav-link">功能</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#games" class="nav-link">游戏库</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">联系我们</a>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主页横幅 -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">海量单机游戏，一键下载</h1>
+                <p class="hero-description">
+                    在GameFlip，您可以免费下载各种精品单机游戏。
+                    我们提供高速下载服务，让您畅享游戏乐趣。
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary">开始下载</button>
+                    <button class="btn btn-secondary">浏览游戏</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-graphic">
+                    <i class="fas fa-coins rotating"></i>
+                    <i class="fas fa-gem floating"></i>
+                    <i class="fas fa-trophy bouncing"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 功能特色 -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">为什么选择GameFlip？</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3>高速下载</h3>
+                    <p>多线程下载技术，让您的下载速度飞起来</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>海量游戏</h3>
+                    <p>精选数千款单机游戏，各种类型应有尽有</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>安全无毒</h3>
+                    <p>所有游戏均经过安全检测，确保您的设备安全</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>持续更新</h3>
+                    <p>定期更新游戏库，第一时间提供最新游戏</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 支持游戏 -->
+    <section id="games" class="games">
+        <div class="container">
+            <h2 class="section-title">热门游戏推荐</h2>
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-icon">🎮</div>
+                    <h3>动作冒险</h3>
+                    <p>刺激的冒险体验</p>
+                </div>
+                <div class="game-card">
+                    <div class="game-icon">🧩</div>
+                    <h3>益智解谜</h3>
+                    <p>挑战你的智慧</p>
+                </div>
+                <div class="game-card">
+                    <div class="game-icon">🏎️</div>
+                    <h3>竞速游戏</h3>
+                    <p>感受速度与激情</p>
+                </div>
+                <div class="game-card">
+                    <div class="game-icon">🎯</div>
+                    <h3>策略游戏</h3>
+                    <p>运筹帷幄的乐趣</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 统计数据 -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="10000">0</div>
+                    <div class="stat-label">游戏数量</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="500000">0</div>
+                    <div class="stat-label">下载次数</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-label">游戏类型</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="100">0</div>
+                    <div class="stat-label">免费下载%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">联系我们</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>开始您的游戏下载之旅</h3>
+                    <p>如果您有任何问题或建议，请随时与我们联系</p>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>download@gameflip.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+86 400-123-4567</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="您的姓名" required>
+                    <input type="email" placeholder="您的邮箱" required>
+                    <textarea placeholder="您的消息" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">发送消息</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-gamepad"></i>
+                    <span>GameFlip</span>
+                </div>
+                <p>&copy; 2024 GameFlip. 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
