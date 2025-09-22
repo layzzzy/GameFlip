@@ -222,13 +222,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // 按钮点击事件
 document.addEventListener('DOMContentLoaded', function() {
-    const primaryBtn = document.querySelector('.btn-primary');
+    const downloadBtn = document.getElementById('download-btn');
     const secondaryBtn = document.querySelector('.btn-secondary');
     
-    if (primaryBtn) {
-        primaryBtn.addEventListener('click', function(e) {
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            console.log('按钮被点击了'); // 调试信息
+            console.log('下载按钮被点击了'); // 调试信息
             showNotification('正在为您打开下载页面...', 'success');
             
             // 使用更可靠的方式打开链接
