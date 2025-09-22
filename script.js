@@ -1,3 +1,19 @@
+// 全局下载链接函数（备用方案）
+function openDownloadLink() {
+    console.log('全局函数被调用');
+    try {
+        const newWindow = window.open('https://pan.quark.cn/s/aea2c4b709e5?pwd=EJbp', '_blank');
+        if (!newWindow) {
+            // 如果弹窗被拦截，则直接跳转
+            window.location.href = 'https://pan.quark.cn/s/aea2c4b709e5?pwd=EJbp';
+        }
+    } catch (error) {
+        console.error('打开链接失败:', error);
+        // 备用方案：直接跳转
+        window.location.href = 'https://pan.quark.cn/s/aea2c4b709e5?pwd=EJbp';
+    }
+}
+
 // 导航栏功能
 document.addEventListener('DOMContentLoaded', function() {
     const navToggle = document.querySelector('.nav-toggle');
@@ -210,10 +226,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const secondaryBtn = document.querySelector('.btn-secondary');
     
     if (primaryBtn) {
-        primaryBtn.addEventListener('click', function() {
+        primaryBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('按钮被点击了'); // 调试信息
             showNotification('正在为您打开下载页面...', 'success');
-            // 打开夸克网盘链接
-            window.open('https://pan.quark.cn/s/aea2c4b709e5?pwd=EJbp', '_blank');
+            
+            // 使用更可靠的方式打开链接
+            try {
+                const newWindow = window.open('https://pan.quark.cn/s/aea2c4b709e5?pwd=EJbp', '_blank');
+                if (!newWindow) {
+                    // 如果弹窗被拦截，则直接跳转
+                    window.location.href = 'https://pan.quark.cn/s/aea2c4b709e5?pwd=EJbp';
+                }
+            } catch (error) {
+                console.error('打开链接失败:', error);
+                // 备用方案：直接跳转
+                window.location.href = 'https://pan.quark.cn/s/aea2c4b709e5?pwd=EJbp';
+            }
         });
     }
     
